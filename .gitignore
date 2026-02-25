@@ -1,0 +1,46 @@
+# =========================
+# Python
+venv/
+__pycache__/
+*.pyc
+medinsight.db
+uploads/
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual Environment
+venv/
+.env
+
+# =========================
+# HuggingFace / ML Models
+# =========================
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.model
+*.safetensors
+.cache/
+huggingface/
+
+# =========================
+# VS Code / IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Node (if frontend tools used)
+# =========================
+node_modules/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db

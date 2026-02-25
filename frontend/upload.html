@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload Patient Records</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">MedInsight AI</div>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="upload.html" class="active">Analyze</a>
+    <a href="history.html">History</a>
+  </div>
+</div>
+
+<div class="container">
+<h1>Upload Patient Records</h1>
+<p class="subtitle">Securely upload and analyze medical documents</p>
+
+<div class="grid-layout">
+
+<div class="card">
+<div class="upload-box" onclick="browseFiles()">
+    <h3>Drop files here to upload</h3>
+    <p>Supported formats: PDF, JPG, DICOM</p>
+    <button onclick="event.stopPropagation(); browseFiles()">Browse Files</button>
+    <p id="selectedFileName" class="selected-file"></p>
+  </div>
+
+  <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.dcm" hidden>
+
+  <label>Patient Identifier</label>
+  <input type="text" id="patientId" placeholder="Enter Patient Name or ID">
+
+  <div class="form-row">
+    <div>
+      <label>Document Category</label>
+      <select id="category">
+        <option value="">Select Category</option>
+        <option>Radiology</option>
+        <option>Lab Report</option>
+        <option>Prescription</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Originating Department</label>
+      <select id="department">
+        <option value="">Select Department</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Oncology</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Data Security</h3>
+  <div class="security-item">AES-256 Encryption</div>
+  <div class="security-item">HIPAA Compliant</div>
+  <div class="security-item">PII Scrubbing</div>
+
+  <div class="notice">
+    AI analysis takes 30-60 seconds per document.
+  </div>
+
+  <button id="uploadBtn" class="primary-btn" type="button" onclick="uploadAnalyze();">Upload & Analyze</button>
+</div>
+
+</div>
+
+<div class="stats">
+  <div class="stat-card">
+    <p>Total Uploads</p>
+    <h2 id="totalUploads">0</h2>
+  </div>
+  <div class="stat-card">
+    <p>AI Accuracy</p>
+    <h2>99.2%</h2>
+  </div>
+  <div class="stat-card">
+    <p>Processing Time</p>
+    <h2>~45s</h2>
+  </div>
+  <div class="stat-card">
+    <p>Pending Analysis</p>
+    <h2 id="pending">0</h2>
+  </div>
+</div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script>
+loadDashboard();
+</script>
+
+</body>
+</html>

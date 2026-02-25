@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+pydantic-settings
+sqlalchemy
+pandas
+numpy
+spacy
+en_core_web_sm
+nltk
+transformers
+torch
+passlib[bcrypt]
+python-jose
+python-dotenv
